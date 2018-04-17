@@ -14,12 +14,19 @@ snippet "requ?i?r?e?" "require" r
 const $1 = require('$1')
 endsnippet
 
-snippet "if ?err?" "if err throw" r
+snippet "if ?\(?err?" "if err throw" r
 if (err) throw err
 endsnippet
 
 snippet "if ?els?e?" "if else" r
 if ($1) {
 } else {
+}
+endsnippet
+
+snippet "try" "try catch" r
+try {
+  $0
+} catch (err) {
 }
 endsnippet
