@@ -13,20 +13,47 @@ snippet mod "module.exports"
 module.exports = $0
 endsnippet
 
-snippet "if ?\(?err?" "if err throw" r
+snippet "if ?\(?err?\)" "if err throw" r
 if (err) throw err
 endsnippet
 
-snippet "if ?els?e?" "if else" r
+snippet "if ?el?s?e?" "if else" r
 if ($1) {
+  $2
 } else {
+  $3
 }
 endsnippet
 
 snippet "try" "try catch" r
 try {
-  $0
+  $1
 } catch (err) {
+  $2
+}
+endsnippet
+
+snippet "pro?p?s?" "react props" r
+const {
+  $0
+} = this.props
+endsnippet
+
+snippet "sta?t?e?" "react state" r
+const {
+  $0
+} = this.state
+endsnippet
+
+snippet "reac?t?" "react component" r
+import React, { Component } from 'react'
+
+export default class $1 extends Component {
+  render () {
+    return (
+      $0
+    )
+  }
 }
 endsnippet
 
