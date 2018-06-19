@@ -1,3 +1,6 @@
+# Snippets coded by my own.
+######################################################################
+
 snippet log "console.log"
 console.log($0)
 endsnippet
@@ -8,10 +11,6 @@ endsnippet
 
 snippet mod "module.exports"
 module.exports = $0
-endsnippet
-
-snippet "requ?i?r?e?" "require" r
-const $1 = require('$1')
 endsnippet
 
 snippet "if ?\(?err?" "if err throw" r
@@ -29,4 +28,49 @@ try {
   $0
 } catch (err) {
 }
+endsnippet
+
+# Snippets stolen around.
+######################################################################
+
+# Credits to:
+#   https://brigade.engineering/sharpen-your-vim-with-snippets-767b693886db
+#
+# where I got the initial code for "require" snippet, then added few
+# modifications and used it as a base to code the "import" snippet.
+
+snippet "requ?i?r?e?" "require" r
+const `!p
+def formatVariableName(path):
+	lastPart = path.split('/')[-1]
+	lastPart = re.sub(r'[_\-]', '', lastPart)
+	lastPart = re.sub(r'\.jsx?$', '', lastPart)
+
+	if lastPart == 'underscore':
+		return '_'
+	elif lastPart == 'jquery':
+		return '$'
+	else:
+		return lastPart
+
+snip.rv = formatVariableName(t[1])
+` = require('${1}')$0
+endsnippet
+
+snippet "imp?o?r?t?" "import" r
+import `!p
+def formatVariableName(path):
+	lastPart = path.split('/')[-1]
+	lastPart = re.sub(r'[_\-]', '', lastPart)
+	lastPart = re.sub(r'\.jsx?$', '', lastPart)
+
+	if lastPart == 'underscore':
+		return '_'
+	elif lastPart == 'jquery':
+		return '$'
+	else:
+		return lastPart
+
+snip.rv = formatVariableName(t[1])
+` = from '${1}'$0
 endsnippet
