@@ -1,5 +1,3 @@
-# Snippets coded by my own.
-######################################################################
 
 snippet log "console.log"
 console.log($0)
@@ -7,10 +5,6 @@ endsnippet
 
 snippet "JSO?N?" "JSON.stringify" r
 JSON.stringify($0)
-endsnippet
-
-snippet mod "module.exports"
-module.exports = $0
 endsnippet
 
 snippet "if ?\(?err?\)" "if err throw" r
@@ -29,11 +23,13 @@ snippet "try" "try catch" r
 try {
   $1
 } catch (err) {
-  $2
+  throw err
 }
 endsnippet
 
-snippet "pro?p?s?" "react props" r
+# React
+
+snippet "props?" "react props" r
 const {
   $0
 } = this.props
@@ -57,8 +53,11 @@ export default class $1 extends Component {
 }
 endsnippet
 
-# Snippets stolen around.
-######################################################################
+# Import and require
+
+snippet mod "module.exports"
+module.exports = $0
+endsnippet
 
 # Credits to:
 #   https://brigade.engineering/sharpen-your-vim-with-snippets-767b693886db
