@@ -3,11 +3,6 @@ snippet log "console.log"
 console.log($0)
 endsnippet
 
-snippet "<" "markup tag" r
-<$1>
-</$1>
-endsnippet
-
 snippet "JSON" "JSON.stringify" r
 JSON.stringify($0)
 endsnippet
@@ -34,16 +29,24 @@ endsnippet
 
 # React
 
-snippet "props?" "react props" r
-const {
-  $0
-} = this.props
+snippet "<>" "React.Fragment" r
+<>
+  $1
+</>
 endsnippet
 
-snippet "state" "react state" r
-const {
-  $0
-} = this.state
+snippet "use[eE]f?f?e?c?t?" "useEffect" r
+useEffect(() => {
+  $1
+}, [$2])
+endsnippet
+
+snippet "use[sS]t?a?t?e?" "useState" r
+const [$1, `!p
+def formatVariableName(name):
+  return 'set' + name.capitalize()
+snip.rv = formatVariableName(t[1])
+`] = useState($2)
 endsnippet
 
 snippet "react" "react component" r
